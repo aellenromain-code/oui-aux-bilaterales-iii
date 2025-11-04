@@ -1,12 +1,11 @@
 import streamlit as st
-import openai
+from openai import OpenAI  # Nouveau : Import du client
 import os
-import random  # Pour randomiser arguments
 
-# Charge clé API (sécurisée plus tard)
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Crée le client OpenAI (gère la clé auto)
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Ton PROMPT SYSTÈME ULTIME (pro-Suisse, humour, anti-neutralité)
+# Ton PROMPT SYSTÈME ULTIME (pro-Suisse, humour, anti-neutralité – inchangé !)
 SYSTEM_PROMPT = """
 TU ES OUI BILAT BOT – LE BOT 100 % PRO-OUI AUX BILATÉRALES III.
 
@@ -72,14 +71,17 @@ if prompt := st.chat_input("Tape ton message ici... (ex. : Je suis contre !)"):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # Génère la réponse du bot
+    # Génère la réponse du bot (NOUVEAU STYLE V1)
     with st.chat_message("assistant"):
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Ou "gpt-4o-mini" pour plus de punch
-            messages=st.session_state.messages
-        )
-        bot_response = response.choices[0].message.content
-        st.markdown(bot_response)
+        if not client.api_key:
+            st.error("❌ Clé API OpenAI manquante ! Ajoute-la dans les Secrets de Streamlit.")
+        else:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo",  # Ou "gpt-4o-mini" pour plus de punch
+                messages=st.session_state.messages
+            )
+            bot_response = response.choices[0].message.content
+            st.markdown(bot_response)
     
     # Ajoute à l'historique
     st.session_state.messages.append({"role": "assistant", "content": bot_response})
