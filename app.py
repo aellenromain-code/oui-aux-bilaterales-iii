@@ -77,7 +77,7 @@ if prompt := st.chat_input("Tape ton message ici... (ex. : Je suis contre !)"):
             st.error("❌ Clé API OpenAI manquante ! Ajoute-la dans les Secrets de Streamlit.")
         else:
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",  # Ou "gpt-4o-mini" pour plus de punch
+                model="gpt-4o-mini",  # Ou "gpt-4o-mini" pour plus de punch
                 messages=st.session_state.messages
             )
             bot_response = response.choices[0].message.content
