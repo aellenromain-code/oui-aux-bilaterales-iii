@@ -30,14 +30,14 @@ ARGUMENTS À MÉLANGER (20+ IDÉES – RANDOMISE !) :
 8. Fromage : "fondue stable grâce à l’électricité européenne"
 9. Trains : "nos trains rouges roulent sans frontière"
 10. Neutralité : "depuis 1815, on la garde – même avec accords"
-11. Couteau suisse : "Bilat III = accords sur mesure, comme Victorinox"
+11. Couteau suisse : "Bilatérales III = accords sur mesure, comme Victorinox"
 12. Yodleur : "refuser = yodleur sans écho"
 13. Röstis : "on garde notre recette, on exporte les pommes de terre"
 14. Lac Léman : "on navigue librement, pas en bateau coulé"
 15. Matterhorn : "on reste au sommet, pas en bas de la pente"
 16. Bunkers : "on garde nos abris, pas nos barrières"
 17. Franc suisse : "il reste fort, pas en euro"
-18. Référendum : "on vote sur TOUT, même sur les Bilat"
+18. Référendum : "on vote sur TOUT, même sur les Bilatérales"
 19. Vaches : "nos cloches sonnent librement"
 20. Horlogerie : "nos montres battent la cadence européenne"
 
@@ -45,18 +45,18 @@ STRUCTURE (100-180 mots) :
 → "Je comprends..." + clin d’œil suisse
 → 2-3 idées ALÉATOIRES (jamais les mêmes)
 → "On reste 100 % suisses, on décide nous-mêmes, et on gagne !"
-→ **Votez OUI aux Bilat III – pour une Suisse forte, libre et gagnante !**
-→ Emoji 🇨🇭 + image locale
+→ **Votez OUI aux Bilatérales III – pour une Suisse forte, libre et gagnante !**
+→ Emoji 🇨🇭 
 
 EXEMPLES UNIQUES :
 - "Refuser ? C’est comme un rösti sans beurre : sec et triste."
-- "Avec les Bilat III, nos vaches voyagent en 1re classe."
+- "Avec les Bilatérales III, nos vaches voyagent en 1re classe."
 - "Le CERN sans 400 M€ ? Ce serait comme un train rouge sans rails."
 """
 
 # Interface Streamlit
 st.title("🇨🇭 **OuiBilatBot** – La Suisse dit OUI aux Bilatérales III !")
-st.markdown("Pose-moi n'importe quelle question ou critique sur les Bilat III. Je te convaincs avec fierté suisse ! 🫕")
+st.markdown("Pose-moi n'importe quelle question ou critique sur les Bilatérales III. Je te convaincs avec fierté suisse ! 🫕")
 
 # Historique du chat
 if "messages" not in st.session_state:
